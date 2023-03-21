@@ -14,12 +14,12 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDPg9oZp-SDGYhPGLSvCQkGS1TeePSxHfs",
-  authDomain: "baytrend-ecomm-react.firebaseapp.com",
-  projectId: "baytrend-ecomm-react",
-  storageBucket: "baytrend-ecomm-react.appspot.com",
-  messagingSenderId: "33892897360",
-  appId: "1:33892897360:web:203522a0ecffa2aa88f755",
+  apiKey: "AIzaSyDGSMVg5UZqEYZ1fPpXfH29jv9okJjqCzI",
+  authDomain: "onrecord-screenrecording.firebaseapp.com",
+  projectId: "onrecord-screenrecording",
+  storageBucket: "onrecord-screenrecording.appspot.com",
+  messagingSenderId: "206354823929",
+  appId: "1:206354823929:web:3f6c74a7e8b005f8a78028",
 };
 
 // Initialize Firebase

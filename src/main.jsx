@@ -13,8 +13,9 @@ import Layout from "./components/Layout";
 import { AuthProvider, useAuth } from "../firebase/Auth";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import Call from "./pages/Call";
 import Loader from "./components/Loader";
+import RecordStore from "./pages/RecordStore";
+import { Navigate } from "react-router-dom";
 
 const ProtectedRoute = ({ children }) => {
   const { user } = useAuth();
@@ -27,10 +28,18 @@ const ProtectedRoute = ({ children }) => {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route path="/" element={<App />} />
+      <Route
+        exact
+        path="/"
+        element={
+          <ProtectedRoute>
+            <App />
+          </ProtectedRoute>
+        }
+      />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/store" element={<Call />} />
+      <Route path="/store" element={<RecordStore />} />
     </Route>
   )
 );
