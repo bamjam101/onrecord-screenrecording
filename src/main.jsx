@@ -10,7 +10,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Layout from "./components/Layout";
-import { AuthProvider, useAuth } from "../firebase/Auth";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Loader from "./components/Loader";
@@ -18,7 +17,7 @@ import RecordStore from "./pages/RecordStore";
 import { Navigate } from "react-router-dom";
 
 const ProtectedRoute = ({ children }) => {
-  const { user } = useAuth();
+  const { user } = "iiii";
   if (!user) {
     return <Navigate to={"/login"} />;
   }
@@ -45,9 +44,7 @@ const router = createBrowserRouter(
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <AuthProvider>
-    <React.Suspense fallback={<Loader />}>
-      <RouterProvider router={router} />
-    </React.Suspense>
-  </AuthProvider>
+  <React.Suspense fallback={<Loader />}>
+    <RouterProvider router={router} />
+  </React.Suspense>
 );
